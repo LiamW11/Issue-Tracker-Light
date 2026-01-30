@@ -10,3 +10,8 @@
      - `Services/`
      - `Pages/`
      - `Data/users.json` (måste kopieras till output)
+**API endpoints**
+- `GET /api/issues`
+- `GET /api/issues/{id}`
+- `POST /api/issues` (body: `{ "title": "...", "description": "..." }`)
+- `PATCH /api/issues/{id}/status` (body: `{ "status": "Open|InProgress|Done" }`)
