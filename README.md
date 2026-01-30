@@ -1,0 +1,12 @@
+- Krav: Visual Studio Community + Blazor workload
+   - Start: “Tryck F5”
+   - Routes:
+     - `/issues`
+     - `/issues/new`
+     - `/issues/{id}`
+     - `/reference/users`
+   - Struktur:
+     - `Models/`
+     - `Services/`
+     - `Pages/`
+     - `Data/users.json` (måste kopieras till output)
