@@ -1,8 +1,8 @@
 ﻿@page "/issues"
 @using YourApp.Models
 @inject YourApp.Services.IssueService IssueService
-
 <h1>Issues</h1>
+<p><a href="/issues/new">Create new issue</a></p>
 
 @if (IssueService.GetAll().Count == 0)
 {
