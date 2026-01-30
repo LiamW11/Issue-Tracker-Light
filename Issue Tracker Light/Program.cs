@@ -1,5 +1,6 @@
 using Issue_Tracker_Light.Client.Pages;
 using Issue_Tracker_Light.Components;
+using YourApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+builder.Services.AddSingleton<IssueService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
