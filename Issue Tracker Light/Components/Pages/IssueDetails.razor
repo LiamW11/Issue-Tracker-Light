@@ -1,0 +1,33 @@
+﻿@page "/issues/{id:int}"
+@using YourApp.Models
+@inject YourApp.Services.IssueService IssueService
+
+<h1>Issue Details</h1>
+
+@if (issue is null)
+{
+    <p>Ärendet hittades inte.</p>
+    <p><a href="/issues">Back to list</a></p>
+}
+else
+{
+    <p><strong>Id:</strong> @issue.Id</p>
+    <p><strong>Titel:</strong> @issue.Title</p>
+    <p><strong>Status:</strong> @issue.Status</p>
+    <p><strong>Skapad:</strong> @issue.CreatedUtc.ToString("u")</p>
+
+    <h3>Description</h3>
+    <p>@issue.Description</p>
+
+    <p><a href="/issues">Back to list</a></p>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+    private Issue? issue;
+
+    protected override void OnParametersSet()
+    {
+        issue = IssueService.GetById(id);
+    }
+}
